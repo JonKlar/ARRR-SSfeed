@@ -19,27 +19,25 @@ MVP
 
 Wireframes
 
+[feed_view](./wireframes/feed view.png)
+[feed_search_view](feed_search_view.png)
+[login_view](login_view.png)
 
 
 
-React-components
-
-
-
-
-Sample-state
-
-
-
-
-
-DB Schema
+[Sample-state](./sample-state.md)
 
 
 
 
 
-API endpoints
+[DB Schema](./schema.md)
+
+
+
+
+
+[API endpoints](./api-endpoints.md)
 
 
 

@@ -21,6 +21,19 @@ published_date  | date      | not null
 feed_id         | integer   | not null (references feeds)
 read            | boolean   | not null, default: false
 
+## articles
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+title           | string    | not null
+content         | text      | not null
+content_snippet | text      | not null
+author          | string    | not null
+published_date  | date      | not null
+read            | boolean   | not null, default: false
+feed_id         | integer   | not null (references feeds)
+
+
 
 ## feeds
 column name   | data type | details

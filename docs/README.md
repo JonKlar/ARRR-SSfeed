@@ -43,4 +43,34 @@ Wireframes
 
 
 
-Implementation timeline
+### Implementation timeline
+
+
+### Phase 1: Backend setup and Front End User Authentication (2 days)
+
+**Objective:** Functioning rails project with front-end Authentication
+
+### Phase 2: Collection model, API, components (1 day)
+
+**Objective:** Collections can be created and seen
+
+### Phase 3: Feed model, API, components (2 days)
+
+**Objective:** Feeds can be added to sessions and the api calls to sites return correctly
+
+### Phase 4:  Articles (2 days)
+
+**Objective:** Articles can be read and indexed under their feeds/collections and saved
+
+### Phase 5: Tags and Search (3 days)
+
+**Objective:** users can search feeds by tags or feed name
+
+### Phase 6: read/unread (1day)
+**Objective:** articles are automatically marked as read and will no longer be shown in the feed
+
+### Bonus features
+
+- [ ] Alternate layout options
+- [ ] Infinite scroll
+- [ ] Share collections with other users

@@ -29,8 +29,8 @@
 
 **Search**
 
-**NewNotebook**
- - NewNotebook
+**NewCollection**
+ - NewCollection
 
 **NewTag**
  - NewTag

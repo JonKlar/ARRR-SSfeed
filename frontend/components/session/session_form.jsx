@@ -56,7 +56,9 @@ class SessionForm extends React.Component {
           placeholder="password"
           value={this.state.password}/>
         <br/>
+        <div className="submit-wrapper">
         <button className="submit-button">{this.props.formType}</button>
+        </div>
         <br/>
         <Link className="other-form-link" to={this.props.otherURL}>{otherForm}</Link>
       </form>

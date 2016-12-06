@@ -1,6 +1,17 @@
 .session-form {
+  font: 16px BlinkMacSystemFont;
   margin: auto;
-  width: 280px;
+  width: 250px;
+  position: relative;
+}
+
+.session-form h1 {
+  display: block;
+  width: 250px;
+  text-align: center;
+  margin: 30px 0 30px 25px;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .session-form input {
@@ -11,11 +22,40 @@
   border: 1px solid #D6D6D6;
 }
 
-.session-form input:active {
+
+
+.session-form input:focus {
   border: 1px solid black;
+  outline: none;
+  position: relative;
   z-index: 1;
 }
 
 .password {
   margin-top: -1px;
+  border-radius: 0 0 3px 3px;
+}
+
+.username {
+  border-radius: 3px 3px 0 0;
+}
+
+.submit-button {
+  display: block;
+  padding: 15px 20px;
+  margin: 20px auto;
+  width: 100%;
+  text-align: center;
+  color: white;
+  cursor: inherit;
+}
+
+.submit-wrapper {
+  border-radius: 5px;
+  width: 292px;
+  background: black;
+}
+
+.submit-wrapper:hover {
+  cursor: pointer;
 }

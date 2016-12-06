@@ -32,6 +32,15 @@ ol, ul {
 }
 
 main {
+  background: red;
   font-family: sans-serif;
   font-size: 16px;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+body {
+  display: block;
+  height: 100%;
 }

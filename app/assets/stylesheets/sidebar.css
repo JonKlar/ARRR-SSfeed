@@ -1,0 +1,19 @@
+.sidebar {
+float: left;
+width: 200px;
+color: white;
+background: #2A2B2F;
+height: 100%;
+color: rgba( 255, 255, 255, 0.9 );
+-webkit-font-smoothing: antialiased;
+overflow: auto;
+position: absolute;
+top: 0;
+bottom: 0;
+padding: 25px
+}
+
+
+.sidebar button {
+  color: white
+}

@@ -42,14 +42,19 @@ class SessionForm extends React.Component {
     // <h2>{errors}</h2>
     return (
     <div className="session-form">
+      <h1>Login to ARRR!SSfeed</h1>
       <form onSubmit={this.handleSubmit}>
-        <label>username</label>
-        <br/>
-        <input className="username" onInput={this.handleUsernameInput} value={this.state.username}/>
-        <br/>
-        <label>password</label>
-        <br/>
-        <input className="password" type="password" onInput={this.handlePasswordInput} value={this.state.password}/>
+        <input
+          className="username"
+          onInput={this.handleUsernameInput}
+          placeholder="username"
+          value={this.state.username}/>
+        <input
+          className="password"
+          type="password"
+          onInput={this.handlePasswordInput}
+          placeholder="password"
+          value={this.state.password}/>
         <br/>
         <button className="submit-button">{this.props.formType}</button>
         <br/>

@@ -35,7 +35,8 @@ class Sidebar extends React.Component {
     return(
       <sidebar className={`sidebar ${pinStatus}`}>
         <button className="pinner" onClick={this.pin}>{ pinButtonText }</button>
-        <h1>welcome to ARRR!SSfeed</h1>
+        <img src="http://whatsupnewp.com/wp-content/themes/giornalismo/images/mobile-nav-icon.png"
+          className="menu-icon"/>
         <div className="saved-link">Saved for later</div>
         <div className="add-feed"> + </div>
         <ul className="feeds-holder">

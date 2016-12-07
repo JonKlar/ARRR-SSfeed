@@ -1,4 +1,4 @@
-ARRR!SSfeed Live!
+[ARRR!SSfeed Live!](https://arrr-ss-feed.herokuapp.com/#/)
 
 ARRR!SSfeed is an RSS reader clone of Feedly.  You can create collections,
 add feeds to your collection and stay up to date with your favorite publications

@@ -9,7 +9,7 @@ window.login = login;
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.currentUser) {
-    const preloadedState = { session: { currentUser: window.currentUser } };
+    const preloadedState = { session: { currentUser: window.currentUser, errors: [] } };
     window.store = configureStore(preloadedState);
   } else {
     window.store = configureStore();

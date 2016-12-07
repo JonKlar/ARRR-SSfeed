@@ -1,0 +1,55 @@
+.text-all, .feeds-container, .feeds {
+  margin-left: 25px;
+}
+
+.feeds-container {
+  position: relative;
+  font-size: 14px;
+  font-weight: bold;
+
+}
+
+
+.feeds {
+  display: none;
+}
+
+.open .feeds {
+  display: block;
+}
+
+.pinned .chevron, .unpinned:hover .chevron {
+  position: absolute;
+  left: -20px;
+  color: rgba(255,255,255,0.58);
+}
+
+.chevron::before {
+  border-style: solid;
+  border-width: 0.25em 0.25em 0 0;
+  content: '      ';
+  display: inline-block;
+  height: 0.45em;
+  left: 0.15em;
+  position: relative;
+  top: 0.15em;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 0.45em;
+  top: 3;
+  transform: rotate(45deg);
+}
+
+.open .chevron:before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.chevron:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.collection-title: {
+  font-weight: 600;
+}

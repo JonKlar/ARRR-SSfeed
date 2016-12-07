@@ -1,9 +1,15 @@
 import React from 'react';
+import Collection from './collection';
 
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {pinned: true};
+    let pinned = true;
+    if (localStorage.pinned === "false") {
+      pinned = false;
+    }
+
+    this.state = {pinned: pinned};
     this.handleLogout = this.handleLogout.bind(this);
     this.pin = this.pin.bind(this);
   }
@@ -15,7 +21,8 @@ class Sidebar extends React.Component {
   );}
 
   pin() {
-    this.setState({pinned: !this.state.pinned});
+    localStorage.pinned = !this.state.pinned;
+    this.setState({ pinned: !this.state.pinned});
     }
 
 
@@ -32,6 +39,16 @@ class Sidebar extends React.Component {
     if (this.props.currentUser){
       username = this.props.currentUser.username;
     }
+
+
+
+    let collections = this.props.currentUser.collections.map( (collection) => (
+      <li key={ collection.id }>
+        <Collection collection={collection}/>
+      </li>
+    ));
+
+
     return(
       <sidebar className={`sidebar ${pinStatus}`}>
         <button className="pinner" onClick={this.pin}>{ pinButtonText }</button>
@@ -40,14 +57,11 @@ class Sidebar extends React.Component {
         <div className="saved-link">Saved for later</div>
         <div className="add-feed"> + </div>
         <ul className="feeds-holder">
-          <h2 className="personal-feeds">PERSONAL FEEDS</h2>
-          <li>All</li>
-          <li>
-            <ul className="feeds">
-              <li>Feed 1</li>
-              <li>Feed 2</li>
-            </ul>
-          </li>
+          <h2 className="personal-feeds">COLLECTIONS</h2>
+          <button className="collections-page"></button>
+          <li className="text-all" >All</li>
+          {collections}
+          {this.children}
         </ul>
         <footer className="sidebar-footer">
           <div className="username">{username}

@@ -62,6 +62,7 @@ class SessionForm extends React.Component {
       <li key={ idx }>{error}</li>
     ));
 
+
     let buttons = (
       <button className="submit-button" onClick={this.handleSubmit}>{this.props.formType}</button>
     );

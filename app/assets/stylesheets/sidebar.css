@@ -26,6 +26,16 @@
   color: #2A2B2F;
 }
 
+.pinned .menu-icon, .unpinned:hover .menu-icon {
+  display: none;
+}
+
+.unpinned .menu-icon {
+  width: 30px;
+  margin-top: 80px;
+}
+
+
 .pinned .sidebar-footer, .unpinned:hover .sidebar-footer {
   line-height: 30px;
   position: fixed;

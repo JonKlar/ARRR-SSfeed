@@ -3,7 +3,9 @@ import React from 'react';
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {pinned: true};
     this.handleLogout = this.handleLogout.bind(this);
+    this.pin = this.pin.bind(this);
   }
 
   handleLogout() {
@@ -12,12 +14,45 @@ class Sidebar extends React.Component {
     }
   );}
 
+  pin() {
+    this.setState({pinned: !this.state.pinned});
+    }
+
+
+
 
   render() {
+    let pinStatus = "pinned";
+    let pinButtonText = "unpin";
+    if (this.state.pinned === false){
+      pinStatus = "unpinned";
+      pinButtonText = "pin";
+    }
+    let username = "";
+    if (this.props.currentUser){
+      username = this.props.currentUser.username;
+    }
     return(
-      <sidebar className="sidebar">
+      <sidebar className={`sidebar ${pinStatus}`}>
+        <button className="pinner" onClick={this.pin}>{ pinButtonText }</button>
         <h1>welcome to ARRR!SSfeed</h1>
-        <button onClick={this.handleLogout}>logout</button>
+        <div className="saved-link">Saved for later</div>
+        <div className="add-feed"> + </div>
+        <ul className="feeds-holder">
+          <h2 className="personal-feeds">PERSONAL FEEDS</h2>
+          <li>All</li>
+          <li>
+            <ul className="feeds">
+              <li>Feed 1</li>
+              <li>Feed 2</li>
+            </ul>
+          </li>
+        </ul>
+        <footer className="sidebar-footer">
+          <div className="username">{username}
+            <button onClick={this.handleLogout}>logout</button>
+          </div>
+        </footer>
       </sidebar>
     );
   }

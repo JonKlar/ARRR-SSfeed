@@ -18,6 +18,7 @@ time, mark, audio, video, submit, button {
 	font: inherit;
 	vertical-align: baseline;
   background: transparent;
+  outline: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -32,7 +33,6 @@ ol, ul {
 }
 
 main {
-  background: red;
   font-family: sans-serif;
   font-size: 16px;
   height: 100%;

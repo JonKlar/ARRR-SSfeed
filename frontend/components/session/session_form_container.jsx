@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
-import { signup, login } from '../../actions/session_actions';
+import { signup, login, clearErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state) =>{
  return ({
@@ -11,13 +11,15 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch, ownProps) => {
   if (ownProps.location.pathname === '/signup') {
     return ({
-      formType: 'signup',
+      formType: 'Sign Up',
       processForm: (user) => dispatch(signup(user)),
+      clearErrors: () => dispatch(clearErrors()),
       otherURL: '/login'
     });} else {
     return ({
-      formType: 'login',
+      formType: 'Login',
       processForm: (user) => dispatch(login(user)),
+      clearErrors: () => dispatch(clearErrors()),
       otherURL: '/signup',
     });
   }

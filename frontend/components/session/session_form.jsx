@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
     this.handleUsernameInput = this.handleUsernameInput.bind(this);
     this.handlePasswordInput = this.handlePasswordInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginGuest = this.loginGuest.bind(this);
   }
 
   handleUsernameInput(e) {
@@ -20,6 +21,11 @@ class SessionForm extends React.Component {
   handlePasswordInput(e) {
     this.setState({password: e.currentTarget.value});
   }
+
+  componentWillReceiveProps(newProps){
+    if (newProps.formType !== this.props.formType) {
+    this.props.clearErrors();
+  }}
 
   handleSubmit(e) {
     e.preventDefault();
@@ -36,14 +42,44 @@ class SessionForm extends React.Component {
     });
   }
 
+  loginGuest(e) {
+    e.preventDefault();
+    this.props.processForm({
+      username: "guest",
+      password: "guesterino"
+    }).then( () => {
+      this.props.router.push('/');
+    });
+  }
+
   render() {
-    const otherForm = this.props.formType === 'login' ? 'signup' : 'login';
-    // const errors = this.props.errors;
-    // <h2>{errors}</h2>
+    let banner = "Login to ARRR!SSfeed";
+    if (this.props.formType === 'Sign Up') {
+      banner = 'Create New User';
+    }
+    const otherForm = this.props.formType === 'Login' ? 'New user? Sign Up' : 'Already a user? Login';
+    const errors = this.props.errors.map( (error, idx) => (
+      <li key={ idx }>{error}</li>
+    ));
+
+    let buttons = (
+      <button className="submit-button" onClick={this.handleSubmit}>{this.props.formType}</button>
+    );
+
+    if (this.props.formType === 'Login') {
+      buttons = (
+        <div>
+          <button className="submit-button" onClick={this.handleSubmit}>{this.props.formType}</button>
+          <button className="guest-login" onClick={this.loginGuest}>Login as Guest</button>
+        </div>
+      );
+    }
+
     return (
     <div className="session-form">
-      <h1>Login to ARRR!SSfeed</h1>
-      <form onSubmit={this.handleSubmit}>
+      <h1>{banner}</h1>
+      <form >
+        <ul className="db-errors">{ errors }</ul>
         <input
           className="username"
           onInput={this.handleUsernameInput}
@@ -57,7 +93,7 @@ class SessionForm extends React.Component {
           value={this.state.password}/>
         <br/>
         <div className="submit-wrapper">
-        <button className="submit-button">{this.props.formType}</button>
+        { buttons }
         </div>
         <br/>
         <Link className="other-form-link" to={this.props.otherURL}>{otherForm}</Link>

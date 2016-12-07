@@ -40,7 +40,7 @@
   border-radius: 3px 3px 0 0;
 }
 
-.submit-button {
+.submit-button, .guest-login {
   display: block;
   padding: 15px 20px;
   margin: 20px auto;
@@ -48,14 +48,21 @@
   text-align: center;
   color: white;
   cursor: inherit;
+  background: black;
+  background: black;
+  border-radius: 5px;
 }
 
 .submit-wrapper {
-  border-radius: 5px;
   width: 292px;
-  background: black;
 }
 
-.submit-wrapper:hover {
+.submit-button:hover, .guest-login:hover {
   cursor: pointer;
+  background: #2A2B2F;
+}
+
+.db-errors {
+  color: red;
+  font-size: 14px;
 }

@@ -6,7 +6,10 @@
   position: relative;
   font-size: 13px;
   font-weight: bold;
+}
 
+.feeds-container h3 {
+  margin: 10px 0 5px 0;
 }
 
 .text-all {
@@ -37,4 +40,14 @@
 
 .collection-title {
   font-weight: 600;
+}
+
+.chevron:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.favicon {
+  float: left;
+  margin: 0 10px 0 -20px;
 }

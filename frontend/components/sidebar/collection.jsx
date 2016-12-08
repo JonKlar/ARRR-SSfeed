@@ -21,6 +21,14 @@ class Collection extends React.Component {
       openness = "open";
     }
 
+    let feeds = this.props.collection.feeds.map( (feed) => (
+       <li className="feed" key={feed.title}>
+         <img src={`http://www.google.com/s2/favicons?domain_url=${feed.link}`} className="favicon"/>
+         <h4 className="sidebar-feed-title">{feed.title}</h4>
+       </li>
+      ));
+
+
     return(
       <div className={`feeds-container ${openness}`} >
         <div className="chevron" onClick={ this.handleCollectionOpen }/>
@@ -28,8 +36,7 @@ class Collection extends React.Component {
           {this.props.collection.title}
         </h3>
         <ul className="feeds">
-          <li className="feed">this is a feed</li>
-          <li>this is another feed</li>
+          { feeds }
         </ul>
       </div>
     );

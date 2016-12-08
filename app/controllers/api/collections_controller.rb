@@ -7,6 +7,7 @@ class Api::CollectionsController < ApplicationController
       render 'api/users/show'
     else
       render json: {errors: ["Invalid title"]}, status: 422
+    end
   end
 
   def destroy

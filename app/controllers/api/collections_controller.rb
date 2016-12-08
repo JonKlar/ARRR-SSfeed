@@ -6,7 +6,7 @@ class Api::CollectionsController < ApplicationController
       currentUser.collections = currentUser.collections.push(@collection)
       render 'api/users/show'
     else
-      render json: {errors: @collection.errors.full_messages}, status: 422
+      render json: {errors: ["Invalid title"]}, status: 422
   end
 
   def destroy

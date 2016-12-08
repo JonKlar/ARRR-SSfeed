@@ -36,17 +36,17 @@ class Sidebar extends React.Component {
       pinButtonText = "pin";
     }
     let username = "";
+    let collections = "";
     if (this.props.currentUser){
       username = this.props.currentUser.username;
+
+      collections = this.props.currentUser.collections.map( (collection) => (
+        <li key={ collection.id }>
+          <Collection collection={collection}/>
+        </li>
+      ));
     }
 
-
-
-    let collections = this.props.currentUser.collections.map( (collection) => (
-      <li key={ collection.id }>
-        <Collection collection={collection}/>
-      </li>
-    ));
 
 
     return(
@@ -59,7 +59,14 @@ class Sidebar extends React.Component {
         <ul className="feeds-holder">
           <h2 className="personal-feeds">COLLECTIONS</h2>
           <button className="collections-page"></button>
-          <li className="text-all" >All</li>
+          <li className="text-all">
+            <div className="burger-menu">
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+            </div>
+            All
+          </li>
           {collections}
           {this.children}
         </ul>

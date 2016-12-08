@@ -4,12 +4,17 @@
 
 .feeds-container {
   position: relative;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
 
 }
 
-
+.text-all {
+  margin: 10px 0 10px 25px;
+  font-size: 14px;
+  position: relative;
+  font-weight: bold;
+}
 .feeds {
   display: none;
 }

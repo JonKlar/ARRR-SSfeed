@@ -4,7 +4,21 @@ const CollectionAPIUtil = {
     return ($.ajax({
       method: "POST",
       url: `api/collections`,
-      data: {collection: `${collection.title}`},
+      data: { collection: { title: `${collection.title}` } },
+    }));
+  },
+
+  addFeed(collection, feed) {
+    return ($.ajax({
+      method: "POST",
+      url: `/api/collections/${collection.id}/feeds/${feed.id}`
+    }));
+  },
+
+  removeFeed(collection, feed) {
+    return ($.ajax({
+      method: "DELETE",
+      url: `/api/collections/${collection.id}/feeds/${feed.id}`
     }));
   }
 

@@ -13,6 +13,8 @@ class Collection < ActiveRecord::Base
   validates :user, presence: true
   validates :title, presence: true
 
-  has_one :user
+  belongs_to :user
+  has_many :subscriptions
+  has_many :feeds, through: :subscriptions
 
 end

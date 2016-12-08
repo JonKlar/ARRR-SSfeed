@@ -44,3 +44,11 @@ body {
   display: block;
   height: 100%;
 }
+
+/*clearfix*/
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}

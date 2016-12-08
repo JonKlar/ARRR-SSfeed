@@ -51,25 +51,27 @@ class Sidebar extends React.Component {
 
     return(
       <sidebar className={`sidebar ${pinStatus}`}>
-        <button className="pinner" onClick={this.pin}>{ pinButtonText }</button>
-        <img src="http://whatsupnewp.com/wp-content/themes/giornalismo/images/mobile-nav-icon.png"
-          className="menu-icon"/>
-        <div className="saved-link">Saved for later</div>
-        <div className="add-feed"> + </div>
-        <ul className="feeds-holder">
-          <h2 className="personal-feeds">COLLECTIONS</h2>
-          <button className="collections-page"></button>
-          <li className="text-all">
-            <div className="burger-menu">
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-            </div>
-            All
-          </li>
-          {collections}
-          {this.children}
-        </ul>
+        <span className="sidebar-main">
+          <button className="pinner" onClick={this.pin}>{ pinButtonText }</button>
+          <img src="http://whatsupnewp.com/wp-content/themes/giornalismo/images/mobile-nav-icon.png"
+            className="menu-icon"/>
+          <div className="saved-link">Saved for later</div>
+          <div className="add-feed"> + </div>
+          <ul className="feeds-holder">
+            <h2 className="personal-feeds">COLLECTIONS</h2>
+            <button className="collections-page"></button>
+            <li className="text-all">
+              <div className="burger-menu">
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
+              </div>
+              All
+            </li>
+            {collections}
+            {this.children}
+          </ul>
+        </span>
         <footer className="sidebar-footer">
           <div className="username">{username}
             <button onClick={this.handleLogout}>logout</button>

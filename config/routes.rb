@@ -3,8 +3,12 @@ Rails.application.routes.draw do
 
   namespace :api, default: {format: :json} do
     resources :users, only: [:create]
-    resources :collections, only:[:create, :destroy, :update]
     resource :session, only:   [:create, :destroy]
+    resources :collections, only:[:create, :destroy]
+    post 'collections/:collection_id/feeds/:feed_id' => 'collections#add_feed', as: :add_feed
+    delete 'collections/:collection_id/feeds/:feed_id' => 'collections#remove_feed', as: :remove_feed
+
+
 
   end
   # The priority is based upon order of creation: first created -> highest priority.

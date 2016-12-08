@@ -1,0 +1,14 @@
+.pinned .burger-menu, .unpinned:hover .burger-menu {
+  top: 0;
+  left: -20px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.pinned .bar, .unpinned:hover .bar {
+    width: 13px;
+    height: 2px;
+    background-color: rgba(255,255,255,0.58);
+    margin: 2px 0;
+    transition: 0.4s;
+}

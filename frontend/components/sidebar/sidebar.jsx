@@ -12,6 +12,7 @@ class Sidebar extends React.Component {
     this.state = {pinned: pinned};
     this.handleLogout = this.handleLogout.bind(this);
     this.pin = this.pin.bind(this);
+    this.sendToFeeds = this.sendToFeeds.bind(this);
   }
 
   handleLogout() {
@@ -25,7 +26,9 @@ class Sidebar extends React.Component {
     this.setState({ pinned: !this.state.pinned});
     }
 
-
+  sendToFeeds(e) {
+    this.props.router.push('/feeds');
+  }
 
 
   render() {
@@ -50,34 +53,39 @@ class Sidebar extends React.Component {
 
 
     return(
-      <sidebar className={`sidebar ${pinStatus}`}>
-        <span className="sidebar-main">
-          <button className="pinner" onClick={this.pin}>{ pinButtonText }</button>
-          <img src="http://whatsupnewp.com/wp-content/themes/giornalismo/images/mobile-nav-icon.png"
-            className="menu-icon"/>
-          <div className="saved-link">Saved for later</div>
-          <div className="add-feed"> + </div>
-          <ul className="feeds-holder">
-            <h2 className="personal-feeds">COLLECTIONS</h2>
-            <button className="collections-page"></button>
-            <li className="text-all">
-              <div className="burger-menu">
-                <div className="bar"></div>
-                <div className="bar"></div>
-                <div className="bar"></div>
-              </div>
-              All
-            </li>
-            {collections}
-            {this.children}
-          </ul>
-        </span>
-        <footer className="sidebar-footer">
-          <div className="username">{username}
-            <button onClick={this.handleLogout}>logout</button>
-          </div>
-        </footer>
-      </sidebar>
+      <div>
+        <sidebar className={`sidebar ${pinStatus}`}>
+          <span className="sidebar-main">
+            <button className="pinner" onClick={ this.pin }>{ pinButtonText }</button>
+            <img src="http://whatsupnewp.com/wp-content/themes/giornalismo/images/mobile-nav-icon.png"
+              className="menu-icon"/>
+            <div className="saved-link">Saved for later</div>
+            <div className="add-feed" onClick={ this.sendToFeeds }> + </div>
+            <ul className="feeds-holder">
+              <h2 className="personal-feeds">COLLECTIONS</h2>
+              <button className="collections-page"></button>
+              <li className="text-all">
+                <div className="burger-menu">
+                  <div className="bar"></div>
+                  <div className="bar"></div>
+                  <div className="bar"></div>
+                </div>
+                All
+              </li>
+              {collections}
+              {this.children}
+            </ul>
+          </span>
+          <footer className="sidebar-footer">
+            <div className="username">{username}
+              <button onClick={this.handleLogout}>logout</button>
+            </div>
+          </footer>
+        </sidebar>
+        <banner className="top-line">
+          <img src='http://www.zdnet.com/i/story/61/44/001492/pirateship.png' className="logo"/>
+        </banner>
+    </div>
     );
   }
 }

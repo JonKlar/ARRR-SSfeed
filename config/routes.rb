@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :collections, only:[:create, :destroy]
     post 'collections/:collection_id/feeds/:feed_id' => 'collections#add_feed', as: :add_feed
     delete 'collections/:collection_id/feeds/:feed_id' => 'collections#remove_feed', as: :remove_feed
-
+    get 'feeds/search/' => 'feeds#search', as: :search_feeds
 
 
   end

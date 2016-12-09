@@ -19,6 +19,8 @@ class Api::CollectionsController < ApplicationController
     @feed = Feed.find(params[:feed_id])
     if @collection && @feed
       @collection.feeds.push(@feed)
+      @user = current_user
+      render 'api/users/show'
     else
     end
   end
@@ -28,6 +30,8 @@ class Api::CollectionsController < ApplicationController
     @feed = Feed.find(params[:feed_id])
     if @collection && @feed
       @collection.feeds.delete(@feed)
+      @user = current_user
+      render 'api/users/show'
     else
     end
   end

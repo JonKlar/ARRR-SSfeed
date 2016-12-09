@@ -48,6 +48,17 @@
 }
 
 .favicon {
+  display: none;
+}
+
+.pinned .favicon, .unpinned:hover .favicon {
   float: left;
   margin: 0 10px 0 -20px;
+  display: inherit;
+}
+
+
+.feed {
+  margin: 10px 0 10px 0;
+  font-weight: 300;
 }

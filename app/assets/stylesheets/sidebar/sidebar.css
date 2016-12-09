@@ -1,3 +1,18 @@
+
+.top-line {
+  border-bottom: 1px solid lightgrey;
+  height: 60px;
+  minimum width: 50px;
+  width: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.logo {
+  margin: 10px 30px;
+  width: 30px;
+}
+
 .pinned, .unpinned:hover {
   float: left;
   width: 230px;
@@ -9,8 +24,8 @@
   overflow-x: hidden;
   padding: 20px;
   font-size: 14px;
-  position: relative;
-}
+  margin-right: 80px;
+  }
 
 .unpinned {
   float: left;
@@ -20,6 +35,7 @@
   background: #2A2B2F;
   color: #2A2B2F;
   transition: width 0.5s ease;
+  margin-right: 80px;
 }
 
 .unpinned button {

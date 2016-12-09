@@ -22,7 +22,7 @@ class Collection extends React.Component {
     }
 
     let feeds = this.props.collection.feeds.map( (feed) => (
-       <li className="feed" key={feed.title}>
+       <li className="feed" key={feed.id}>
          <img src={`http://www.google.com/s2/favicons?domain_url=${feed.link}`} className="favicon"/>
          <h4 className="sidebar-feed-title">{feed.title}</h4>
        </li>

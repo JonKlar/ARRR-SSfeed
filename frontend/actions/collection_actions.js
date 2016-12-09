@@ -1,20 +1,32 @@
 import CollectionAPIUtil from '../util/collection_util.js';
-import { receiveErrors } from './session_actions';
-export const RECEIVE_COLLECTIONS = 'RECEIVE_COLLECTIONS;';
-
-export function receiveCollections(collections) {
-    return ({
-      type: RECEIVE_COLLECTIONS,
-      collections
-    });
-}
+import { receiveErrors, receiveCurrentUser } from './session_actions';
 
 
 export function createCollection(collection) {
   return (dispatch) => {
     return CollectionAPIUtil.createCollection(collection)
     .then(
-      (user) => dispatch(receiveCollections(user.collections)),
+      (currentUser) => dispatch(receiveCurrentUser(currentUser)),
+      (errors) => dispatch(receiveErrors(errors))
+    );
+  };
+}
+
+export function addFeed(collection, feed) {
+  return (dispatch) => {
+    return CollectionAPIUtil.addFeed(collection, feed)
+    .then(
+      (currentUser) => dispatch(receiveCurrentUser(currentUser)),
+      (errors) => dispatch(receiveErrors(errors))
+    );
+  };
+}
+
+export function removeFeed(collection, feed) {
+  return (dispatch) => {
+    return CollectionAPIUtil.removeFeed(collection, feed)
+    .then(
+      (currentUser) => dispatch(receiveCurrentUser(currentUser)),
       (errors) => dispatch(receiveErrors(errors))
     );
   };

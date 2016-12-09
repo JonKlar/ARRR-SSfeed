@@ -1,0 +1,62 @@
+.search {
+  position: absolute;
+  left: 350px;
+  top: 100px;
+  width: 60vh
+  padding: 20px 100px;
+  margin: auto;
+}
+.search h4 {
+    font-size: 24px;
+    margin: 20px 0;
+    color: lightgrey;
+}
+
+.search-bar {
+  position: relative;
+  width: 50vw;
+  height: 60px;
+  border: none;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  font-size: 20px;
+  padding-left: 20px;
+
+}
+
+.search-feed {
+  margin: 30px 40px;
+  max-width: 60%;
+  position: relative;
+}
+
+.search-feed h5 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+
+.favicon-large {
+  width: 50px;
+  position: absolute;
+  margin-left: -60px;
+
+}
+
+.search-feed button {
+  position: absolute;
+  top: 10px;
+  right: -130px;
+  width: 120px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+}
+
+.search-feed button:hover {
+  cursor: pointer;
+  color: orange;
+  border: 1px solid orange;
+}

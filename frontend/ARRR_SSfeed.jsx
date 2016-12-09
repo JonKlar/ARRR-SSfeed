@@ -9,7 +9,11 @@ window.login = login;
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.currentUser) {
-    const preloadedState = { session: { currentUser: window.currentUser, errors: [] } };
+    const preloadedState = {
+      session: { currentUser: window.currentUser, errors: [] },
+      feeds: { searchedFeeds: [] },
+      selected: { feed: {}, collection: {} } 
+    };
     window.store = configureStore(preloadedState);
   } else {
     window.store = configureStore();

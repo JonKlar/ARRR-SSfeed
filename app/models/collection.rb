@@ -12,6 +12,7 @@
 class Collection < ActiveRecord::Base
   validates :user, presence: true
   validates :title, presence: true
+  validates :feeds, uniqueness: true
 
   belongs_to :user
   has_many :subscriptions

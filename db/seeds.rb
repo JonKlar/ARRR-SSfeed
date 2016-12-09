@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
-guest = User.create!(username: guest, password: guesterino)
+guest = User.create!(username: "guest", password: "guesterino")
 
 Collection.destroy_all
 Collection.create!(

@@ -6,9 +6,21 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.destroy_all
+guest = User.create!(username: guest, password: guesterino)
 
+Collection.destroy_all
+Collection.create!(
+  title: "Test Collection",
+  user_id: guest.id
+)
 
+Collection.create!(
+  title: "Other Test Collection",
+  user_id: guest.id
+)
 
+Feed.destroy_all
 the_verge = Feed.create!({
   url: "http://www.theverge.com/rss/index.xml",
   title: "The Verge",

@@ -53,7 +53,7 @@ class Sidebar extends React.Component {
 
 
     return(
-      <div>
+      <div className={`${pinStatus}` + "-body"}>
         <sidebar className={`sidebar ${pinStatus}`}>
           <span className="sidebar-main">
             <button className="pinner" onClick={ this.pin }>{ pinButtonText }</button>
@@ -85,6 +85,7 @@ class Sidebar extends React.Component {
         <banner className="top-line">
           <img src='http://www.zdnet.com/i/story/61/44/001492/pirateship.png' className="logo"/>
         </banner>
+        {this.props.children}
     </div>
     );
   }

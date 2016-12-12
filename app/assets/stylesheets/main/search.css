@@ -1,11 +1,26 @@
-.search {
+.pinned-body .search {
   position: absolute;
   left: 350px;
   top: 100px;
-  width: 60vh;
-  padding: 20px 100px;
+  width: 60%;
   margin: auto;
+  margin-left: 20px;
+  height: 90vh;
+  overflow-y: auto;
+
 }
+
+.unpinned-body .search {
+  float: left;
+  width: 60%;
+  height: 90vh;
+  margin: auto;
+  margin-top: 20px;
+  margin-left: 20px;
+  overflow-y: auto;
+
+}
+
 .search h4 {
     font-size: 24px;
     margin: 20px 0;
@@ -24,6 +39,10 @@
 
 }
 
+.search ul {
+  width: 100%;
+  margin-left: 20px;
+}
 
 .search-feed {
   margin: 30px 40px;

@@ -4,8 +4,7 @@ import SidebarContainer from './sidebar/sidebar_container';
 
 const App = (props) => (
   <div>
-    <SidebarContainer router={ props.router }/>
-    { props.children }
+    <SidebarContainer router={ props.router } children={ props.children }/>
   </div>
 );
 

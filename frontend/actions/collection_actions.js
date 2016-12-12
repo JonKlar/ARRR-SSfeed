@@ -12,6 +12,16 @@ export function createCollection(collection) {
   };
 }
 
+export function destroyCollection(collection) {
+  return (dispatch) => {
+    return CollectionAPIUtil.destroyCollection(collection)
+    .then(
+      (currentUser) => dispatch(receiveCurrentUser(currentUser)),
+      (errors) => dispatch(receiveErrors(errors))
+    );
+  };
+}
+
 export function addFeed(collection, feed) {
   return (dispatch) => {
     return CollectionAPIUtil.addFeed(collection, feed)

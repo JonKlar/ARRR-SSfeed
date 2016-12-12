@@ -101,3 +101,32 @@
   right: 0;
   bottom: 0;
 }
+
+.create-collection-form {
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.create-collection-input {
+  font-size: 14px;
+  border: none;
+  margin-right: 15px;
+  padding: 5px;
+}
+
+.create-collection-input:hover {
+  cursor: pointer;
+}
+
+.create-collection-input:focus {
+  outline: none;
+  border: 1px solid black;
+}
+
+.create-collection-input:focus:hover {
+  cursor: text;
+}
+
+.create-collection-button {
+  font-size: 18px;
+}

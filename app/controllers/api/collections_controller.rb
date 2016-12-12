@@ -8,7 +8,7 @@ class Api::CollectionsController < ApplicationController
   end
 
   def destroy
-    @collection = Collection.find(params[:collection_id])
+    @collection = Collection.find(params[:id])
     @collection.destroy
     @user = current_user
     render 'api/users/show'

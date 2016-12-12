@@ -24,6 +24,7 @@
 
 }
 
+
 .search-feed {
   margin: 30px 40px;
   max-width: 60%;
@@ -59,4 +60,13 @@
   cursor: pointer;
   color: orange;
   border: 1px solid orange;
+}
+
+.search-feed button.subscribed-to-feed {
+  border: 1px solid lightgreen;
+  color: lightgreen;
+}
+
+.search-feed button.subscribed-to-feed:after {
+  content: "d";
 }

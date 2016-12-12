@@ -8,6 +8,14 @@ const CollectionAPIUtil = {
     }));
   },
 
+  destroyCollection(collection) {
+    return ($.ajax({
+      method: "DELETE",
+      url: `api/collections/${collection.id}`,
+    }));
+  },
+
+
   addFeed(collection, feed) {
     return ($.ajax({
       method: "POST",

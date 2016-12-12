@@ -6,6 +6,7 @@ class FeedsSearch extends React.Component {
     this.state = {queryString: ""};
     this.handleInput = this.handleInput.bind(this);
     this.handleSubscribe = this.handleSubscribe.bind(this);
+    this.subscribed = this.subscribed.bind(this);
   }
 
   handleInput(e) {
@@ -16,6 +17,26 @@ class FeedsSearch extends React.Component {
   handleSubscribe(feed) {
     this.props.setSelectedFeed(feed);
     this.props.router.push('/addfeed');
+  }
+
+  subscribed(feed) {
+    const collections = this.props.currentUser.collections;
+    if (collections.length === 0) {
+      return "";
+    }
+
+    for (let i = 0 ; i < collections.length ; i++) {
+      if (collections[i].feeds.length === 0) {
+        continue;
+      } else {
+        for (let j = 0 ; j < collections[i].feeds.length ; j++){
+          if (collections[i].feeds[j].id === feed.id) {
+            return "subscribed-to-feed";
+          }
+        }
+      }
+    }
+    return "";
   }
 
   render() {
@@ -43,7 +64,7 @@ class FeedsSearch extends React.Component {
           />
         <h5>{feed.title}</h5>
         <p>{feed.description}</p>
-        <button onClick={ () => this.handleSubscribe(feed) }>subscribe</button>
+        <button onClick={ () => this.handleSubscribe(feed) } className={ this.subscribed(feed) }>subscribe</button>
       </li>
     ));
 

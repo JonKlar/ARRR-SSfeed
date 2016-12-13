@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const preloadedState = {
       session: { currentUser: window.currentUser, errors: [] },
       feeds: { searchedFeeds: [] },
-      selected: { feed: {}, collection: {} } 
+      selected: { feed: {}, collection: {}, article: {} },
+      articles: { feed_url: [] }
     };
     window.store = configureStore(preloadedState);
   } else {

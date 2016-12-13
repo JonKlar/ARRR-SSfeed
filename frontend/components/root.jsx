@@ -5,6 +5,7 @@ import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import FeedsSearchContainer from './main/feeds_search_container';
 import AddFeedContainer from './main/add_feed_container';
+import AllArticlesContainer from './main/article_views/all_container';
 
 const Root = ({ store }) => {
   function ensureLoggedIn(nextState, replace) {
@@ -24,6 +25,7 @@ const Root = ({ store }) => {
           <Route path="/feeds" component={ FeedsSearchContainer }>
             <Route path="/addfeed" component= { AddFeedContainer }/>
           </Route>
+          <Route path="/all" component={ AllArticlesContainer }/>
         </Route>
         <Route path="/login" component= { SessionFormContainer } onEnter={ loggedIn }/>
         <Route path="/signup" component= { SessionFormContainer } onEnter={ loggedIn }/>

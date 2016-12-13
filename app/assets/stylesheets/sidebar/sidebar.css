@@ -13,11 +13,12 @@
 }
 
 .pinned, .unpinned:hover {
-  float: left;
+  position: fixed;
   width: 230px;
   color: white;
   background: #2A2B2F;
-  height: 100vh;
+  bottom: 0;
+  top: 0;
   color: rgba( 255, 255, 255, 0.9 );
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -27,7 +28,9 @@
   }
 
 .unpinned {
-  float: left;
+  position: fixed;
+  bottom: 0;
+  top: 0;
   width: 75px;
   height: 100vh;
   overflow: hidden;
@@ -53,7 +56,7 @@
 .pinned .sidebar-main, .unpinned:hover .sidebar-main {
   width: 230px;
   overflow-y: auto;
-  position: fixed;
+  position: relative;
   padding-top: 30px;
   bottom: 50px;
   padding-right: 20px;

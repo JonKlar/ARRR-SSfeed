@@ -1,24 +1,26 @@
-.pinned-body .search {
+
+.pinned + div section, .unpinned:hover + div section {
   position: absolute;
   left: 350px;
   top: 100px;
+  bottom: 0;
   width: 60%;
   margin: auto;
   margin-left: 20px;
-  height: 90vh;
-  overflow-y: auto;
-
+  margin-top: 20px;
+  transition: all 0.5s ease;
 }
 
-.unpinned-body .search {
-  float: left;
-  width: 60%;
-  height: 90vh;
+.unpinned + div section{
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  bottom: 0;
+  width: 80%;
   margin: auto;
   margin-top: 20px;
   margin-left: 20px;
-  overflow-y: auto;
-
+  transition: all 0.5s ease;
 }
 
 .search h4 {

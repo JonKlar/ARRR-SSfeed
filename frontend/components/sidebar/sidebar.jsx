@@ -13,6 +13,7 @@ class Sidebar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.pin = this.pin.bind(this);
     this.sendToFeeds = this.sendToFeeds.bind(this);
+    this.handleClickAll = this.handleClickAll.bind(this);
   }
 
   handleLogout() {
@@ -28,6 +29,10 @@ class Sidebar extends React.Component {
 
   sendToFeeds(e) {
     this.props.router.push('/feeds');
+  }
+
+  handleClickAll(e) {
+    this.props.router.push('/all');
   }
 
 
@@ -64,7 +69,8 @@ class Sidebar extends React.Component {
             <ul className="feeds-holder">
               <h2 className="personal-feeds">COLLECTIONS</h2>
               <button className="collections-page"></button>
-              <li className="text-all">
+              <li className="text-all"
+                onClick={this.handleClickAll}>
                 <div className="burger-menu">
                   <div className="bar"></div>
                   <div className="bar"></div>
@@ -82,10 +88,10 @@ class Sidebar extends React.Component {
             </div>
           </footer>
         </sidebar>
+        {this.props.children}
         <banner className="top-line">
           <img src='http://www.zdnet.com/i/story/61/44/001492/pirateship.png' className="logo"/>
         </banner>
-        {this.props.children}
     </div>
     );
   }

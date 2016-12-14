@@ -27,11 +27,12 @@
     font-size: 24px;
     margin: 20px 0;
     color: lightgrey;
+    padding-left: 30px;
 }
 
 .search-bar {
   position: relative;
-  width: 50vw;
+  width: 80%;
   height: 60px;
   border: none;
   border: 1px solid lightgrey;
@@ -96,7 +97,7 @@
   color: lightgrey;
   margin: 30px 0;
   font-size: 36px;
-
+  padding-left: 30px;
 }
 
 .search-term {
@@ -113,5 +114,5 @@
 
 .search {
   padding: 0 50px;
-
+  width: 80%;
 }

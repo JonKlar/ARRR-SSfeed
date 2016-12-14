@@ -25,6 +25,7 @@ class AllArticles extends React.Component {
     return(
       <div>
         <section>
+          <div className="all-title">All</div>
           <h1>{content}</h1>
         </section>
       </div>

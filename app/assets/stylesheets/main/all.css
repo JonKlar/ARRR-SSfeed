@@ -1,17 +1,24 @@
+
 .story-source {
   float: left;
   margin-right: 20px;
-  width: 10%;
+  width: 15%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .story-date {
-  width: 10%;
+  width: 15%;
   float: right;
-  margin-right: 50px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .story-title {
-  width: 70%;
+  display: inline-block;
+  width: 65%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -19,8 +26,10 @@
 
 .story {
   padding: 5px 0;
+  display: block;
 }
 
 .story:hover {
   background: lightgrey;
+  cursor: pointer;
 }

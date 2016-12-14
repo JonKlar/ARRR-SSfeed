@@ -2,13 +2,18 @@
 .top-line {
   border-bottom: 1px solid lightgrey;
   height: 60px;
-  width: auto;
-  display: block;
+  left: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
   margin-bottom: 20px;
+  background: white;
+  z-index: 0;
 }
 
 .logo {
-  margin: 10px 30px;
+  float: right;
+  margin: 10px 60px;
   width: 30px;
 }
 
@@ -25,6 +30,7 @@
   padding: 20px;
   font-size: 14px;
   margin-right: 80px;
+  z-index: 1;
   }
 
 .unpinned {
@@ -38,6 +44,7 @@
   color: #2A2B2F;
   transition: width 0.5s ease;
   margin-right: 80px;
+  z-index: 1;
 }
 
 .unpinned button {
@@ -56,7 +63,7 @@
 .pinned .sidebar-main, .unpinned:hover .sidebar-main {
   width: 230px;
   overflow-y: auto;
-  position: relative;
+  position: absolute;
   padding-top: 30px;
   bottom: 50px;
   padding-right: 20px;
@@ -141,4 +148,13 @@
 .pinned .personal-feeds, .unpinned:hover .personal-feeds {
   color: rgba( 255, 255, 255, 0.3 );
   font-size: 12px;
+}
+
+.pinned .collection-title, .unpinned:hover .collection-title {
+  padding: 5px 0;
+}
+
+.pinned .collection-title:hover, .unpinned:hover .collection-title:hover {
+  cursor: pointer;
+  background: rgba( 255, 255, 255, 0.3 );
 }

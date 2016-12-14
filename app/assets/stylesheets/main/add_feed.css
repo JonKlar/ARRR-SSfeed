@@ -4,6 +4,7 @@
   right: 0;
   top: 0;
   bottom: 0;
+  z-index: 1;
 }
 
 .loaded {
@@ -17,11 +18,13 @@
 }
 
 .aftc-sidebar {
-  float: left;
+  position: absolute;
   width: 0;
   background: white;
   opacity: 1;
-  height: 100vh;
+  top: 0;
+  bottom: 50px;
+  left: 0;
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   margin-right: 80px;
@@ -60,6 +63,7 @@
   overflow: hidden;
   padding: 10px;
   border-top: 1px solid grey;
+  background: white;
 }
 
 .aftc-footer button {

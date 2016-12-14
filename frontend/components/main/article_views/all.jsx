@@ -11,29 +11,22 @@ class AllArticles extends React.Component {
   }
 
   render(){
-    const articles = this.props.articles;
-    const content = [];
-    Object.keys(articles).forEach( (feed) => {
-      articles[feed].forEach( (story) => {
-        content.push(
-          <div className="story">
-            <div className="story-source">{feed}</div>
-            <article className="story-title" onClick={() => this.handleSelectArticle(story)}>{story.title}</article>
-            <div className="story-date">{DateHelper.time_ago_in_words_with_parsing(story.publishedDate)}</div>
-          </div>);
+     let content = this.props.articles.map( (article) => {
+       return (
+          <div className="story" key={article.story.title}>
+            <div className="story-source">{article.feed}</div>
+            <article className="story-title" onClick={() => this.handleSelectArticle(article.story)}>{article.story.title}</article>
+            <div className="story-date">{DateHelper.time_ago_in_words_with_parsing(article.story.publishedDate)}</div>
+          </div>
+          );
         });
-      });
-
-
 
 
     return(
       <div>
         <section>
           <h1>{content}</h1>
-
         </section>
-
       </div>
     );
   }

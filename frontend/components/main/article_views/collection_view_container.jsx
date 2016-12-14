@@ -1,10 +1,11 @@
-import AllArticles from './all';
 import { connect } from 'react-redux';
+import CollectionView from './collection_view';
+import { articlesInCollection } from '../../../reducers/selectors';
 import { setSelectedArticle } from '../../../actions/selected_actions';
-import { allArticles } from '../../../reducers/selectors';
 
 const mapStateToProps = (state) => ({
-  articles: allArticles(state)
+  collection: state.selected.collection,
+  articles: articlesInCollection(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -14,4 +15,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AllArticles);
+)(CollectionView);

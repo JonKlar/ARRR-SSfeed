@@ -16,8 +16,6 @@ class App extends React.Component {
       let feeds = collection.feeds;
       feeds.forEach ((feed) => this.props.getArticles(feed));
     });
-    // const feed = collections[0].feeds[0];
-    // this.props.getArticles();
   }
 
   render() {

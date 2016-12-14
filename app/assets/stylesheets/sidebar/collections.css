@@ -29,6 +29,7 @@
 .pinned .chevron, .unpinned:hover .chevron {
   position: absolute;
   left: -20px;
+  top: 5px;
   color: rgba(255,255,255,0.58);
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import { setSelectedCollection } from '../../actions/selected_actions';
 
 class Collection extends React.Component {
   constructor(props) {
@@ -9,10 +10,16 @@ class Collection extends React.Component {
       open: true
     };
     this.handleCollectionOpen = this.handleCollectionOpen.bind(this);
+    this.handleOpenCollectionView = this.handleOpenCollectionView.bind(this);
   }
 
   handleCollectionOpen(e) {
     this.setState({open: !this.state.open});
+  }
+
+  handleOpenCollectionView(e) {
+    this.props.setSelectedCollection(this.props.collection);
+    this.props.router.push('/collection_view');
   }
 
   render() {
@@ -32,7 +39,7 @@ class Collection extends React.Component {
     return(
       <div className={`feeds-container ${openness}`} >
         <div className="chevron" onClick={ this.handleCollectionOpen }/>
-        <h3 className="collection-title">
+        <h3 className="collection-title" onClick={this.handleOpenCollectionView}>
           {this.props.collection.title}
         </h3>
         <ul className="feeds">
@@ -43,4 +50,15 @@ class Collection extends React.Component {
   }
 }
 
-export default Collection;
+const mapDispatchToProps = (dispatch) => ({
+  setSelectedCollection: (collection) => dispatch(setSelectedCollection(collection))
+});
+
+const mapStateToProps = (state) => ({
+
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Collection);

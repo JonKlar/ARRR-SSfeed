@@ -1,0 +1,52 @@
+.collection-top-line {
+  font-size: 30px;
+  font-weight: bold;
+  border-bottom: 1px solid lightgrey;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 80px;
+  margin-top: -20px;
+}
+
+.collection-view-content {
+  display: block;
+  width: 90%;
+  margin: 40px 100px;
+  position: relative;
+}
+
+.collection-view-content:hover {
+  cursor: pointer;
+  background: lightgrey;
+}
+
+.collection-view-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.collection-view-author {
+  float: left;
+  margin-right: 20px;
+  font-size: 12px;
+}
+
+.collection-view-date {
+  float: left;
+  font-size: 12px;
+}
+
+
+.collection-view-snippet {
+  margin-top: 10px;
+  display: block;
+  font-size: 14px;
+  color: grey;
+}
+
+.collection-view-image {
+  position: absolute;
+  left: -120px;
+  width: 100px;
+  height: 60px;
+}

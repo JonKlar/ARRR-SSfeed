@@ -50,7 +50,7 @@ class Sidebar extends React.Component {
 
       collections = this.props.currentUser.collections.map( (collection) => (
         <li key={ collection.id }>
-          <Collection collection={collection}/>
+          <Collection collection={collection} router={this.props.router}/>
         </li>
       ));
     }

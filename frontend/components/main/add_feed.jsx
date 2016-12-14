@@ -11,13 +11,21 @@ class AddFeed extends React.Component {
     this.toggleSubscribe = this.toggleSubscribe.bind(this);
     this.handleCreateCollection = this.handleCreateCollection.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.resetArticles = this.resetArticles.bind(this);
   }
 
   componentDidMount(){
     window.setTimeout( () => this.setState({loaded: "loaded"}), 100);
   }
 
-
+  resetArticles() {
+    const collections = this.props.collections;
+    collections.forEach((collection) => {
+      let feeds = collection.feeds;
+      this.props.resetArticles();
+      feeds.forEach ((feed) => this.props.getArticles(feed));
+    });
+  }
 
   handleClose() {
     this.props.router.push('feeds/');
@@ -44,10 +52,15 @@ class AddFeed extends React.Component {
             this.props.destroyCollection(collection);
           }
         })
-      );
+      ).then(
+                () => this.resetArticles()
+              );
     } else {
-      this.props.addFeed(collection, this.props.feed);
+      this.props.addFeed(collection, this.props.feed).then(
+        () => this.props.getArticles(this.props.feed)
+      );
     }
+
   }
 
 
@@ -91,9 +104,9 @@ class AddFeed extends React.Component {
           <ul className = "aftc-collection-list">
           { collections }
           </ul>
-          <section className="aftc-footer">
+          <footer className="aftc-footer">
             <button className="close" onClick={this.handleClose}> close </button>
-          </section>
+          </footer>
         </sidebar>
         <span className="afts-dead-space" onClick={this.handleClose}/>
 

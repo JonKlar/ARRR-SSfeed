@@ -46,3 +46,19 @@ export function articlesInFeed(state) {
   }
   return articles;
 }
+
+
+export function articlesFromToday(state) {
+  let articles = [];
+  Object.keys(state.articles).forEach( (feedTitle) => {
+    state.articles[feedTitle].forEach( (article) => {
+      if ((new Date - new Date(article.publishedDate)) < 86400000) {
+        articles.push({story: article, feedTitle});
+      }
+    });
+  });
+  articles.sort( (a, b) => {
+    return (new Date(b.story.publishedDate) - new Date(a.story.publishedDate));
+  });
+  return articles;
+}

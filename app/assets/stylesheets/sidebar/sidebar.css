@@ -158,3 +158,19 @@
   cursor: pointer;
   background: rgba( 255, 255, 255, 0.3 );
 }
+
+.today-link {
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.today-link:before {
+  content: "\1F733";
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.today-link:hover {
+  cursor: pointer;
+  background: rgba( 255, 255, 255, 0.3 );
+}

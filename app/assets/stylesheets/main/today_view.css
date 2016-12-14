@@ -1,0 +1,58 @@
+.today-view-content {
+  box-sizing: border-box;
+  float: left;
+  height: 325px;
+  width: 270px;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.today-view-content:hover {
+  cursor: pointer;
+  background: lightgrey;
+}
+
+
+.today-view-image {
+  width: 100%;
+  height: 50%;
+  border-radius: 10px;
+}
+
+.today-view-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.today-view-author {
+  float: left;
+  font-size: 12px;
+}
+
+.today-view-author:after {
+  content: "  /"
+}
+
+.today-view-feed-title {
+  float: left;
+  font-size: 12px;
+}
+
+.today-view-feed-title:before {
+  content:"/   "
+}
+
+.today-view-feed-title:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+.today-view-snippet {
+  margin: 5px 0;
+  color: grey;
+  font-size: 14px;
+}

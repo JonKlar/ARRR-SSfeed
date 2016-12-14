@@ -17,11 +17,11 @@ class CollectionView extends React.Component {
       const div = document.createElement('div');
       div.innerHTML = article.content;
       const img = (div.querySelector('img'));
-      let source ="#";
+      let source ="http://www.zdnet.com/i/story/61/44/001492/pirateship.png";
       if (img) {
         source = img.src;
       }
-      
+
       return (
         <li key={article.title}
           className="collection-view-content"
@@ -29,7 +29,7 @@ class CollectionView extends React.Component {
         >
           <img src={source} className="collection-view-image"/>
           <h1 className="collection-view-title">{article.title}</h1>
-          <h2 className="collection-view-author">by {article.author}</h2>
+          <h2 className="collection-view-author">{article.author}</h2>
           <h3 className="collection-view-date">
             {DateHelper.time_ago_in_words_with_parsing(article.publishedDate)}
           </h3>

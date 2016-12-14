@@ -38,3 +38,11 @@ export function articlesInCollection(state) {
   });
   return articles;
 }
+
+export function articlesInFeed(state) {
+  let articles = [];
+  if (state.selected.feed.title && state.articles[state.selected.feed.title]) {
+    articles = state.articles[state.selected.feed.title];
+  }
+  return articles;
+}

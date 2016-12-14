@@ -1,5 +1,5 @@
 .pinned .burger-menu, .unpinned:hover .burger-menu {
-  top: 0;
+  top: 4px;
   left: -20px;
   position: absolute;
   cursor: pointer;

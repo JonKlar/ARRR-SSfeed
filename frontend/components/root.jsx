@@ -7,6 +7,7 @@ import FeedsSearchContainer from './main/feeds_search_container';
 import AddFeedContainer from './main/add_feed_container';
 import AllArticlesContainer from './main/article_views/all_container';
 import CollectionViewContainer from './main/article_views/collection_view_container';
+import FeedViewContainer from './main/article_views/feed_view_container';
 
 const Root = ({ store }) => {
   function ensureLoggedIn(nextState, replace) {
@@ -21,13 +22,14 @@ const Root = ({ store }) => {
     }
   return (
     <Provider store={ store }>
-      <Router history={ hashHistory }>
+      <Router onUpdate={() => window.scrollTo(0, 0)} history={ hashHistory }>
         <Route path="/" component= { App } onEnter={ ensureLoggedIn }>
           <Route path="/feeds" component={ FeedsSearchContainer }>
             <Route path="/addfeed" component= { AddFeedContainer }/>
           </Route>
           <Route path="/all" component={ AllArticlesContainer }/>
           <Route path="collection_view" component={ CollectionViewContainer }/>
+          <Route path="feed_view" component={ FeedViewContainer }/>
         </Route>
         <Route path="/login" component= { SessionFormContainer } onEnter={ loggedIn }/>
         <Route path="/signup" component= { SessionFormContainer } onEnter={ loggedIn }/>

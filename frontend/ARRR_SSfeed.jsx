@@ -7,12 +7,22 @@ import { login } from './actions/session_actions';
 
 window.login = login;
 
+let selectedCollection = {};
+if (localStorage.collection && localStorage.collection !== "null") {
+  selectedCollection = JSON.parse(localStorage.collection);
+}
+
+let selectedFeed = {};
+if (localStorage.feed && localStorage.feed !== "null") {
+  selectedFeed = JSON.parse(localStorage.feed);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   if (window.currentUser) {
     const preloadedState = {
       session: { currentUser: window.currentUser, errors: [] },
       feeds: { searchedFeeds: [] },
-      selected: { feed: {}, collection: {}, article: {} },
+      selected: { feed: selectedFeed, collection: selectedCollection, article: {} },
       articles: { feed_url: [] }
     };
     window.store = configureStore(preloadedState);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setSelectedCollection } from '../../actions/selected_actions';
+import { setSelectedCollection, setSelectedFeed } from '../../actions/selected_actions';
 
 class Collection extends React.Component {
   constructor(props) {
@@ -11,6 +11,7 @@ class Collection extends React.Component {
     };
     this.handleCollectionOpen = this.handleCollectionOpen.bind(this);
     this.handleOpenCollectionView = this.handleOpenCollectionView.bind(this);
+    this.handleOpenFeedView = this.handleOpenFeedView.bind(this);
   }
 
   handleCollectionOpen(e) {
@@ -19,7 +20,14 @@ class Collection extends React.Component {
 
   handleOpenCollectionView(e) {
     this.props.setSelectedCollection(this.props.collection);
+    localStorage.collection = JSON.stringify(this.props.collection);
     this.props.router.push('/collection_view');
+  }
+
+  handleOpenFeedView(feed) {
+    this.props.setSelectedFeed(feed);
+    localStorage.feed = JSON.stringify(feed);
+    this.props.router.push('/feed_view');
   }
 
   render() {
@@ -31,7 +39,7 @@ class Collection extends React.Component {
     let feeds = this.props.collection.feeds.map( (feed) => (
        <li className="feed" key={feed.id}>
          <img src={`http://www.google.com/s2/favicons?domain_url=${feed.link}`} className="favicon"/>
-         <h4 className="sidebar-feed-title">{feed.title}</h4>
+         <h4 className="sidebar-feed-title" onClick={() => this.handleOpenFeedView(feed)}>{feed.title}</h4>
        </li>
       ));
 
@@ -51,7 +59,8 @@ class Collection extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  setSelectedCollection: (collection) => dispatch(setSelectedCollection(collection))
+  setSelectedCollection: (collection) => dispatch(setSelectedCollection(collection)),
+  setSelectedFeed: (feed) => dispatch(setSelectedFeed(feed)),
 });
 
 const mapStateToProps = (state) => ({

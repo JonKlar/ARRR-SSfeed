@@ -37,7 +37,7 @@ class Sidebar extends React.Component {
   }
 
   handleOpenToday() {
-    this.props.router.push('today');
+    this.props.router.push('/');
   }
 
 

@@ -10,6 +10,12 @@ class TodayView extends React.Component {
     this.props.setSelectedArticle(article);
   }
 
+  componentDidMount(){
+    if (this.props.currentUser.collections.length === 0) {
+      this.props.router.push('/feeds');
+    }
+  }
+
   render() {
     const content = this.props.articles.map( (article) => {
       const div = document.createElement('div');

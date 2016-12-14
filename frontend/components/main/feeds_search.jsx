@@ -7,11 +7,17 @@ class FeedsSearch extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleSubscribe = this.handleSubscribe.bind(this);
     this.subscribed = this.subscribed.bind(this);
+    this.handleTermSearch = this.handleTermSearch.bind(this);
   }
 
   handleInput(e) {
     this.setState({queryString: e.currentTarget.value});
     this.props.searchFeeds(this.state.queryString);
+  }
+
+  handleTermSearch(term) {
+    this.setState({queryString: term});
+    this.props.searchFeeds(term);
   }
 
   handleSubscribe(feed) {
@@ -40,7 +46,12 @@ class FeedsSearch extends React.Component {
   }
 
   render() {
-    if (this.state.queryString === "") {
+    if (this.state.queryString.length < 2) {
+      let searchTerms = ["Technology", "Finance", "Movies", "News", "Politics", "Music", "Games", "Culture", "World News", "Video Games", "Startups", "Money", "Business"].map( (searchTerm) => {
+        return (
+          <li onClick={() => this.handleTermSearch(searchTerm)} className="search-term">#{searchTerm}</li>
+        );
+      });
       return(
         <div>
           <section className="search">
@@ -50,7 +61,8 @@ class FeedsSearch extends React.Component {
               onInput={this.handleInput}
               placeholder="Search feeds"
               />
-            <h1>So much cool stuff is gonna go here</h1>
+            <h1 className="suggested-search">Suggested Search Terms</h1>
+            <ul>{searchTerms}</ul>
           </section>
           { this.props.children }
         </div>

@@ -24,14 +24,14 @@ const Root = ({ store }) => {
   return (
     <Provider store={ store }>
       <Router onUpdate={() => window.scrollTo(0, 0)} history={ hashHistory }>
-        <Route path="/" component= { App } onEnter={ ensureLoggedIn }>
+        <Route component= { App } onEnter={ ensureLoggedIn }>
           <Route path="/feeds" component={ FeedsSearchContainer }>
             <Route path="/addfeed" component= { AddFeedContainer }/>
           </Route>
           <Route path="/all" component={ AllArticlesContainer }/>
           <Route path="/collection_view" component={ CollectionViewContainer }/>
           <Route path="/feed_view" component={ FeedViewContainer }/>
-          <Route path="/today" component={ TodayViewContainer }/>
+          <Route path="/" component={ TodayViewContainer }/>
         </Route>
         <Route path="/login" component= { SessionFormContainer } onEnter={ loggedIn }/>
         <Route path="/signup" component= { SessionFormContainer } onEnter={ loggedIn }/>

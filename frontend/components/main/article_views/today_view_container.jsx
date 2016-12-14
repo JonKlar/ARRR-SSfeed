@@ -4,7 +4,8 @@ import TodayView from './today_view';
 import { articlesFromToday } from '../../../reducers/selectors';
 
 const mapStateToProps = (state) => ({
-  articles: articlesFromToday(state)
+  articles: articlesFromToday(state),
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

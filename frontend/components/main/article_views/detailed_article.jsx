@@ -35,7 +35,8 @@ class DetailedArticle extends React.Component {
           <div className="detailed-article-deadspace" onClick={this.handleCloseDetail}>
           </div>
           <div className="detailed-article-headline">
-            <div className="tab-container">
+            <div className="tab-container"
+              onClick={this.handleCloseDetail}>
               <div className="tab"/>
               <div className="x">X</div>
             </div>

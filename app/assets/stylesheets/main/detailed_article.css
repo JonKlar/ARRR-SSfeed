@@ -49,9 +49,14 @@
   font-weight: bold;
 }
 
-.x:hover {
+.tab:hover {
   cursor: pointer;
   color: black;
+}
+
+.x:hover {
+  color: black;
+  cursor: pointer;
 }
 
 
@@ -75,7 +80,7 @@
 }
 
 
-.detailed-article img {
+.detailed-article > img {
   display: block;
   max-width: 100%;
   margin-bottom: 20px;
@@ -103,9 +108,9 @@
   width: 75%;
 }
 
-.detailed-article-headline:hover {
+.detailed-article-headline h1:hover {
   cursor: pointer;
-  background: grey;
+  background: lightgrey;
 }
 
 .detailed-article-headline h1 {

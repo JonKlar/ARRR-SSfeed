@@ -91,3 +91,27 @@
 .search-feed button.subscribed-to-feed:after {
   content: "d";
 }
+
+.suggested-search {
+  color: lightgrey;
+  margin: 30px 0;
+  font-size: 36px;
+
+}
+
+.search-term {
+  float: left;
+  color: lightgrey;
+  margin: 30px 0;
+  font-size: 24px;
+  padding: 20px 100px 20px 0;
+}
+
+.search-term:hover {
+  cursor: pointer;
+}
+
+.search {
+  padding: 0 50px;
+
+}

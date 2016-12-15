@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208155500) do
+ActiveRecord::Schema.define(version: 20161215170703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title",           null: false
+    t.string   "categories"
+    t.string   "content",         null: false
+    t.string   "link",            null: false
+    t.string   "publishedDate"
+    t.string   "author"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "content_snippet"
+  end
+
+  add_index "articles", ["link"], name: "index_articles_on_link", unique: true, using: :btree
 
   create_table "collections", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -35,6 +49,16 @@ ActiveRecord::Schema.define(version: 20161208155500) do
   end
 
   add_index "feeds", ["id"], name: "index_feeds_on_id", using: :btree
+
+  create_table "saved_articles", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "saved_articles", ["article_id"], name: "index_saved_articles_on_article_id", using: :btree
+  add_index "saved_articles", ["user_id"], name: "index_saved_articles_on_user_id", using: :btree
 
   create_table "subscriptions", force: :cascade do |t|
     t.integer  "collection_id", null: false

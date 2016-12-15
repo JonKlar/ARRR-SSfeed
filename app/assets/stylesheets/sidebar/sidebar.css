@@ -108,6 +108,23 @@
   font-size: 14px;
   font-weight: bold;
   margin: 20px 0;
+  padding: 5px;
+}
+
+.saved-link:before {
+  content: "\1F738";
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.saved-counter {
+  float: right;
+  margin: 5px 30px 0 0;
+}
+
+.saved-link:hover {
+  cursor: pointer;
+  background: rgba( 255, 255, 255, 0.3 );
 }
 
 .pinned .add-feed, .unpinned:hover .add-feed {
@@ -162,13 +179,14 @@
 
 .today-link {
   font-weight: bold;
-  padding: 5px 0;
+  padding: 5px;
 }
 
 .today-link:before {
   content: "\1F733";
-  font-size: 20px;
-  margin-right: 5px;
+  font-size: 18px;
+  margin-right: 8px;
+
 }
 
 .today-link:hover {

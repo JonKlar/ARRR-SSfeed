@@ -1,5 +1,6 @@
 import FeedsAPIUtil from '../util/feeds_util';
-
+import ArticleAPIUtil from '../util/article_util';
+import { receiveCurrentUser, receiveErrors } from './session_actions';
 export const RECEIVE_ARTICLES = 'RECEIVE_ARTICLES';
 export const RESET_ARTICLES = 'RESET_ARTICLES';
 
@@ -27,8 +28,27 @@ export function getArticles(feed) {
             articles: xml.responseData.feed.entries
           };
         dispatch(receiveArticles(data));
-        console.log(data);
       }
+    );
+  };
+}
+
+export function createArticle(article) {
+  return (dispatch) => {
+    return ArticleAPIUtil.createArticle(article)
+    .then(
+      (currentUser) => dispatch(receiveCurrentUser(currentUser)),
+      (errors) => dispatch(receiveErrors(errors))
+    );
+  };
+}
+
+export function destroyArticle(article) {
+  return (dispatch) => {
+    return ArticleAPIUtil.destroyArticle(article)
+    .then(
+      (currentUser) => dispatch(receiveCurrentUser(currentUser)),
+      (errors) => dispatch(receiveErrors(errors))
     );
   };
 }

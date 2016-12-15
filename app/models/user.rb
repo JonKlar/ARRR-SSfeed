@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
   attr_reader :password
 
   has_many :collections
+  has_many :saved_articles
+  has_many :articles, through: :saved_articles
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)

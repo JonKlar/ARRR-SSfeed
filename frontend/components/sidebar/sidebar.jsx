@@ -15,6 +15,7 @@ class Sidebar extends React.Component {
     this.sendToFeeds = this.sendToFeeds.bind(this);
     this.handleClickAll = this.handleClickAll.bind(this);
     this.handleOpenToday = this.handleOpenToday.bind(this);
+    this.handleOpenSaved = this.handleOpenSaved.bind(this);
   }
 
   handleLogout() {
@@ -38,6 +39,10 @@ class Sidebar extends React.Component {
 
   handleOpenToday() {
     this.props.router.push('/');
+  }
+
+  handleOpenSaved() {
+    this.props.router.push('/saved_view');
   }
 
 
@@ -69,7 +74,10 @@ class Sidebar extends React.Component {
             <button className="pinner" onClick={ this.pin }>{ pinButtonText }</button>
             <img src="http://whatsupnewp.com/wp-content/themes/giornalismo/images/mobile-nav-icon.png"
               className="menu-icon"/>
-            <div className="saved-link">Saved for later</div>
+            <div className="saved-link" onClick={this.handleOpenSaved}>Saved for later
+              <div className="saved-counter">{this.props.currentUser.savedArticles.length}
+              </div>
+            </div>
             <div className="today-link"
               onClick={this.handleOpenToday}>
               Today

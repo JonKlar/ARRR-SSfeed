@@ -49,7 +49,10 @@ class FeedsSearch extends React.Component {
     if (this.state.queryString.length < 2) {
       let searchTerms = ["Technology", "Finance", "Movies", "News", "Politics", "Music", "Games", "Culture", "World News", "Video Games", "Startups", "Money", "Business"].map( (searchTerm) => {
         return (
-          <li onClick={() => this.handleTermSearch(searchTerm)} className="search-term">#{searchTerm}</li>
+          <li onClick={() => this.handleTermSearch(searchTerm)}
+             className="search-term"
+             key={searchTerm}
+             >#{searchTerm}</li>
         );
       });
       return(

@@ -62,3 +62,11 @@ export function articlesFromToday(state) {
   });
   return articles;
 }
+
+export function savedArticles(state) {
+  let articles = [];
+  if (state.session.currentUser) {
+    articles = state.session.currentUser.savedArticles;
+  }
+  return articles;
+}

@@ -124,7 +124,7 @@
   float: left;
 }
 
-.detailed-article-headline h2:after {
+.detailed-article-headline h2:after, .detailed-article-headline h3:after {
   content: "       /";
 }
 
@@ -132,6 +132,15 @@
   float: left;
 }
 
-.detailed-article-headline h3:before {
-  content: "/       "
+.detailed-article-headline h3:before, .saved:before {
+  content: "/       ";
+  font-size: 16px;
+}
+
+.saved {
+  font-size: 14px;
+}
+
+.saved:hover {
+  cursor: pointer;
 }

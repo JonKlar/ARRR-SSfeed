@@ -1,5 +1,6 @@
 import React from 'react';
 import DateHelper from '../../../util/date_util';
+import ArticleSaveButton from '../article_save_button';
 
 class DetailedArticle extends React.Component {
   constructor(props) {
@@ -46,6 +47,7 @@ class DetailedArticle extends React.Component {
               </h1>
             <h2>{this.props.selectedArticle.author}</h2>
             <h3>{DateHelper.time_ago_in_words_with_parsing(this.props.selectedArticle.publishedDate)}</h3>
+            <h4><ArticleSaveButton article={this.props.selectedArticle}/></h4>
           </div>
           <article className={`detailed-article ${this.state.loaded}`}
             dangerouslySetInnerHTML={{__html: this.props.selectedArticle.content }}>

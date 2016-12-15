@@ -7,3 +7,4 @@ json.collections do
     json.feeds collection.feeds
   end
 end
+json.savedArticles user.articles

@@ -55,6 +55,7 @@ class Sidebar extends React.Component {
     }
     let username = "";
     let collections = "";
+    let savedCount = "";
     if (this.props.currentUser){
       username = this.props.currentUser.username;
 
@@ -63,7 +64,10 @@ class Sidebar extends React.Component {
           <Collection collection={collection} router={this.props.router}/>
         </li>
       ));
+
+      savedCount = this.props.currentUser.savedArticles.length;
     }
+
 
 
 
@@ -75,7 +79,7 @@ class Sidebar extends React.Component {
             <img src="http://whatsupnewp.com/wp-content/themes/giornalismo/images/mobile-nav-icon.png"
               className="menu-icon"/>
             <div className="saved-link" onClick={this.handleOpenSaved}>Saved for later
-              <div className="saved-counter">{this.props.currentUser.savedArticles.length}
+              <div className="saved-counter">{savedCount}
               </div>
             </div>
             <div className="today-link"

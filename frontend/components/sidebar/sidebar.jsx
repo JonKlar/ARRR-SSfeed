@@ -79,12 +79,12 @@ class Sidebar extends React.Component {
             <img src="http://whatsupnewp.com/wp-content/themes/giornalismo/images/mobile-nav-icon.png"
               className="menu-icon"/>
             <div className="saved-link" onClick={this.handleOpenSaved}>Saved for later
-              <div className="saved-counter">{savedCount}
+              <div className="count">{savedCount}
               </div>
             </div>
             <div className="today-link"
               onClick={this.handleOpenToday}>
-              Today
+              Today <div className="count">{this.props.todayCount}</div>
             </div>
             <div className="add-feed" onClick={ this.sendToFeeds }> + </div>
             <ul className="feeds-holder">
@@ -98,6 +98,7 @@ class Sidebar extends React.Component {
                   <div className="bar"></div>
                 </div>
                 All
+                <div className="count">{this.props.allCount}</div>
               </li>
               {collections}
               {this.children}

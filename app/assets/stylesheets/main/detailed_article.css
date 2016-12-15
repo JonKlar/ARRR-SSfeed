@@ -7,6 +7,12 @@
   background: rgba(0, 0, 0, 0.6);
   transition: all 0.5s ease;
   z-index: 1;
+  line-height: 150%;
+}
+
+.detailed-article-container.unload {
+  background: transparent:
+  transition: all 0.5s ease;
 }
 
 .detailed-article-deadspace {
@@ -43,7 +49,7 @@
   height: 20px;
   width: 20px;
   z-index: 1;
-  top: 22px;
+  top: 18px;
   right: 10px;
   font-size: 12px;
   font-weight: bold;
@@ -79,6 +85,10 @@
   width: 75%;
 }
 
+.unloaded .detailed-article, .unloaded .detailed-article-headline {
+  width: 0;
+  transition: all .3s ease;
+}
 
 .detailed-article > img {
   display: block;

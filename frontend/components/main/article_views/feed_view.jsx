@@ -1,5 +1,6 @@
 import React from 'react';
 import DateHelper from '../../../util/date_util';
+import ArticleSaveButton from '../article_save_button';
 
 class FeedView extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class FeedView extends React.Component {
         <h3 className="feed-view-date">
           {DateHelper.time_ago_in_words_with_parsing(article.publishedDate)}
         </h3>
+        <h4 className="feed-view-save"><ArticleSaveButton article={article}/></h4>
         <br/>
         <article className="feed-view-content"
           dangerouslySetInnerHTML={{__html: article.content }}

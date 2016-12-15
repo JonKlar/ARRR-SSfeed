@@ -36,19 +36,31 @@ class Collection extends React.Component {
       openness = "open";
     }
 
-    let feeds = this.props.collection.feeds.map( (feed) => (
+    let collectionCount = 0;
+    this.props.collection.feeds.forEach( (feed) => {
+      if (this.props.allArticles[feed.title]) {
+      collectionCount += this.props.allArticles[feed.title].length;
+    }});
+
+    let feeds = this.props.collection.feeds.map( (feed) => {
+      let feedCount = 0;
+      if (this.props.allArticles[feed.title]) {
+        feedCount = this.props.allArticles[feed.title].length;
+      }
+      return(
        <li className="feed" key={feed.id}>
          <img src={`http://www.google.com/s2/favicons?domain_url=${feed.link}`} className="favicon"/>
-         <h4 className="sidebar-feed-title" onClick={() => this.handleOpenFeedView(feed)}>{feed.title}</h4>
+         <h4 className="sidebar-feed-title" onClick={() => this.handleOpenFeedView(feed)}>{feed.title}
+         <div className="count">{feedCount}</div></h4>
        </li>
-      ));
+     );});
 
 
     return(
       <div className={`feeds-container ${openness}`} >
         <div className="chevron" onClick={ this.handleCollectionOpen }/>
         <h3 className="collection-title" onClick={this.handleOpenCollectionView}>
-          {this.props.collection.title}
+          {this.props.collection.title} <div className="count">{collectionCount}</div>
         </h3>
         <ul className="feeds">
           { feeds }
@@ -64,7 +76,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-
+  allArticles: state.articles
 });
 
 export default connect(

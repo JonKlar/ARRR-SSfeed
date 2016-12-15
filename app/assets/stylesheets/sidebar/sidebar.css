@@ -107,7 +107,7 @@
 .pinned .saved-link, .unpinned:hover .saved-link {
   font-size: 14px;
   font-weight: bold;
-  margin: 20px 0;
+  margin: 20px 0 10px 0;
   padding: 5px;
 }
 
@@ -117,10 +117,6 @@
   margin-right: 10px;
 }
 
-.saved-counter {
-  float: right;
-  margin: 5px 30px 0 0;
-}
 
 .saved-link:hover {
   cursor: pointer;
@@ -197,4 +193,13 @@
 .pinned .username:before, .unpinned:hover .username:before {
   content: "\1F464";
   margin-right: 10px;
+}
+
+.count {
+  float: right;
+  margin: 0 15px 0 0;
+}
+
+.sidebar-feed-title > .count {
+  margin: 0 15px 0 0;
 }

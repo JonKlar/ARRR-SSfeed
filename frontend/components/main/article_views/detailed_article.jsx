@@ -17,9 +17,11 @@ class DetailedArticle extends React.Component {
   // }
 
   handleCloseDetail(e) {
-    this.props.clearSelectedArticle();
-    this.setState( { loaded: "" } );
-
+    this.setState( { loaded: "unload" } );
+    window.setTimeout( () => {
+      this.props.clearSelectedArticle();
+      this.setState( { loaded: "" } );
+    }, 100);
   }
 
   handlePassThrough(url) {

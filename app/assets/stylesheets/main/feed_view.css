@@ -9,6 +9,7 @@
   margin-bottom: 50px;
   padding-bottom: 50px;
   border-bottom: 1px solid lightgrey;
+  line-height: 150%;
 }
 
 .feed-view-title {
@@ -25,8 +26,16 @@
   float: left;
 }
 
+.feed-view-author:after, .feed-view-date:after {
+  content:"   /"
+}
+
 .feed-view-date {
-  float: right;
+  float: left;
+}
+
+.feed-view-date:before {
+  content: "/   "
 }
 
 .feed-view-content > img, .feed-view-content > div > img {

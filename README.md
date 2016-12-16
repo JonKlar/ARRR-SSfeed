@@ -1,6 +1,6 @@
 # ARRR!SS-FEED
 
-[ARRR!SS-FEEF Live!][https://arrr-ss-feed.herokuapp.com/#/collection_view]
+[ARRR!SS-FEED Live!](https://arrr-ss-feed.herokuapp.com/#/collection_view)
 
 ARRR!SS-FEED is a full-stack web application based on Feedly.  It has a Ruby on Rails backend, PostgreSQL database, and react-redux on the front end for one page functionality.
 
@@ -12,7 +12,7 @@ ARRR!SS-FEED is a full-stack web application based on Feedly.  It has a Ruby on 
 
   Feeds are hardcoded in on the backend with a title, link, url, and description.  Feeds are subscribed to and put in collections by the subscriptions join table, which has columns for a collection_id and feed_id.
 
-  ![Collection View Screenshot][app/assets/images/Collection_View_Screenshot.png]
+  ![Collection View Screenshot](app/assets/images/Collection_View_Screenshot.png)
 
 ### Articles
   all articles from subscribed feeds are obtained from their source sites by ajax call when the site is loaded, and held on to by the react state on the front end.  When a particular view is visited, the articles pertaining to that view are chosen by a selector and rendered.
@@ -33,7 +33,7 @@ ARRR!SS-FEED is a full-stack web application based on Feedly.  It has a Ruby on 
   ### Search
     Feeds can be searched by substrings of their descriptions.  Ensuring that the title is in the description, since it is hardcoded and curated on the backend, allows for this to be a robust solution.
 
-    ![Image of Search][app/assets/images/Search_Screenshot.png]
+    ![Image of Search](app/assets/images/Search_Screenshot.png)
 
 ## Future Content for the Project
 

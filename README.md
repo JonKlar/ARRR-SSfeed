@@ -31,7 +31,7 @@ ARRR!SS-FEED is a full-stack web application based on Feedly.  It has a Ruby on 
     end
   ```
 ### Search
-    Feeds can be searched by substrings of their descriptions.  Ensuring that the title is in the description, since it is hardcoded and curated on the backend, allows for this to be a robust solution.
+  Feeds can be searched by substrings of their descriptions.  Ensuring that the title is in the description, since it is hardcoded and curated on the backend, allows for this to be a robust solution.
 
   ![Image of Search](app/assets/images/Search_screenshot.png)
 
@@ -40,7 +40,7 @@ ARRR!SS-FEED is a full-stack web application based on Feedly.  It has a Ruby on 
   In addition to what is already implemented, I plan to continue working on this project to add the functionality outlined below:
 
 ### User Profiles
-    Users have profiles and can share their collections with other users.
+  Users have profiles and can share their collections with other users.
 
 ### User added feeds
-    Besides the curated feeds added on the backend, users can add and subscribe to their own RSS feeds by providing a title, url pointing to the RSS file, and link to the feed source site.  These will not be searchable by other users, since they will not be provided with a way to add a description(which is the feed search parameter)
+  Besides the curated feeds added on the backend, users can add and subscribe to their own RSS feeds by providing a title, url pointing to the RSS file, and link to the feed source site.  These will not be searchable by other users, since they will not be provided with a way to add a description(which is the feed search parameter)

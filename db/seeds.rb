@@ -134,3 +134,10 @@ the_atlantic = Feed.create!({
     link: "https://www.theatlantic.com/",
     description: "The Atlantic covers news and analysis on politics, business, culture, technology, national, international and life on the official site of The Atlantic Magazine."
 })
+
+gamespot = Feed.create!({
+  url: "http://www.gamespot.com/feeds/mashup/",
+  link: "https://www.gamespot.com",
+  title: "Gamespot",
+  description: "GameSpot is the world's leading source for PS4, Xbox One, PS3, Xbox 360, Wii U, PS Vita, Wii, PC, 3DS, and DS video game news, reviews, previews, trailers, ..."
+  })

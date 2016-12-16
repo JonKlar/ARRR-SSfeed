@@ -1,3 +1,11 @@
+sidebar.unpinned  * {
+  display: none
+}
+
+sidebar.unpinned:hover  * {
+  display: block;
+}
+
 
 .top-line {
   border-bottom: 1px solid lightgrey;
@@ -47,18 +55,26 @@
   z-index: 1;
 }
 
+
+
 .unpinned button {
   color: #2A2B2F;
+}
+
+sidebar.unpinned .sidebar-main {
+  display: block;
+}
+
+sidebar.unpinned .menu-icon {
+  width: 30px;
+  margin: 80px 0 0 20px;
+  display: block;
 }
 
 .pinned .menu-icon, .unpinned:hover .menu-icon {
   display: none;
 }
 
-.unpinned .menu-icon {
-  width: 30px;
-  margin-top: 80px;
-}
 
 .pinned .sidebar-main, .unpinned:hover .sidebar-main {
   width: 230px;

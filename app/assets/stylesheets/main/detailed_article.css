@@ -101,6 +101,23 @@
   margin: 20px 0;
 }
 
+.detailed-article h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.detailed-article a {
+  text-decoration: none;
+}
+
+.detailed-article ul {
+  list-style: circle;
+}
+
+.detailed-article li {
+  margin-left: 20px;
+}
+
 .detailed-article-headline {
   box-sizing: border-box;
   position: fixed;

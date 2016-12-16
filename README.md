@@ -33,7 +33,7 @@ ARRR!SS-FEED is a full-stack web application based on Feedly.  It has a Ruby on 
   ### Search
     Feeds can be searched by substrings of their descriptions.  Ensuring that the title is in the description, since it is hardcoded and curated on the backend, allows for this to be a robust solution.
 
-    ![Image of Search](app/assets/images/Search_Screenshot.png)
+  ![Image of Search](app/assets/images/Search_screenshot.png)
 
 ## Future Content for the Project
 

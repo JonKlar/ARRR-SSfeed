@@ -14,6 +14,7 @@ export function allArticles(state) {
 
 
 
+
 export function articlesInCollection(state) {
   if (Object.keys(state.selected.collection).length === 0) {
     return [];

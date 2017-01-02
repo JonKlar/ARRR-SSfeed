@@ -10,11 +10,12 @@ import CollectionViewContainer from './main/article_views/collection_view_contai
 import FeedViewContainer from './main/article_views/feed_view_container';
 import TodayViewContainer from './main/article_views/today_view_container';
 import SavedViewContainer from './main/article_views/saved_view_container';
+import Splash from './main/splash';
 
 const Root = ({ store }) => {
   function ensureLoggedIn(nextState, replace) {
     if (store.getState().session.currentUser === null){
-      replace('/login');
+      replace('/welcome');
     }}
 
     function loggedIn(nextState, replace) {
@@ -35,8 +36,10 @@ const Root = ({ store }) => {
           <Route path="/saved_view" component={ SavedViewContainer }/>
           <Route path="/" component={ TodayViewContainer }/>
         </Route>
-        <Route path="/login" component= { SessionFormContainer } onEnter={ loggedIn }/>
-        <Route path="/signup" component= { SessionFormContainer } onEnter={ loggedIn }/>
+        <Route path="/welcome" component={ Splash } onEnter={ loggedIn }>
+          <Route path="/login" component= { SessionFormContainer } onEnter={ loggedIn }/>
+          <Route path="/signup" component= { SessionFormContainer } onEnter={ loggedIn }/>
+        </Route>
       </Router>
     </Provider>
   );

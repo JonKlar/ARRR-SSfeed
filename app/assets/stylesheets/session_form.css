@@ -1,8 +1,22 @@
+.session-form-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
 .session-form {
+  position: absolute;
   font: 16px BlinkMacSystemFont;
-  margin: auto;
-  width: 250px;
-  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  background: white;
+  top: 100px;
+  padding: 0 20px 20px 20px;
+  border-radius: 15px;
 }
 
 .session-form h1 {
@@ -15,7 +29,7 @@
 }
 
 .session-form input {
-  width: 100%;
+  width: 250px;
   padding: 10px 20px;
   background: #FAFAFA;
   font-size: 16px;

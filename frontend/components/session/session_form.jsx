@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
     this.handlePasswordInput = this.handlePasswordInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loginGuest = this.loginGuest.bind(this);
+    this.closeForm = this.closeForm.bind(this);
   }
 
   handleUsernameInput(e) {
@@ -52,6 +53,10 @@ class SessionForm extends React.Component {
     });
   }
 
+  closeForm(e) {
+    this.props.router.push('/welcome');
+  }
+
   render() {
     let banner = "Login to ARRR!SSfeed";
     if (this.props.formType === 'Sign Up') {
@@ -77,29 +82,31 @@ class SessionForm extends React.Component {
     }
 
     return (
-    <div className="session-form">
-      <h1>{banner}</h1>
-      <form >
-        <ul className="db-errors">{ errors }</ul>
-        <input
-          className="username"
-          onInput={this.handleUsernameInput}
-          placeholder="username"
-          value={this.state.username}/>
-        <input
-          className="password"
-          type="password"
-          onInput={this.handlePasswordInput}
-          placeholder="password"
-          value={this.state.password}/>
-        <br/>
-        <div className="submit-wrapper">
-        { buttons }
+      <div className="session-form-wrapper" onClick={ this.closeForm }>
+        <div className="session-form">
+          <h1>{banner}</h1>
+          <form >
+            <ul className="db-errors">{ errors }</ul>
+            <input
+              className="username"
+              onInput={this.handleUsernameInput}
+              placeholder="username"
+              value={this.state.username}/>
+            <input
+              className="password"
+              type="password"
+              onInput={this.handlePasswordInput}
+              placeholder="password"
+              value={this.state.password}/>
+            <br/>
+            <div className="submit-wrapper">
+              { buttons }
+            </div>
+            <br/>
+            <Link className="other-form-link" to={this.props.otherURL}>{otherForm}</Link>
+          </form>
         </div>
-        <br/>
-        <Link className="other-form-link" to={this.props.otherURL}>{otherForm}</Link>
-      </form>
-    </div>
+      </div>
   );}
 
 }

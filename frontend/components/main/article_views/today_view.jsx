@@ -1,4 +1,6 @@
 import React from 'react';
+import ArticleAPIUtil from '../../../util/article_util';
+
 
 class TodayView extends React.Component {
   constructor(props) {
@@ -19,13 +21,21 @@ class TodayView extends React.Component {
   render() {
     const content = this.props.articles.map( (article) => {
       const div = document.createElement('div');
-      div.innerHTML = article.story.content;
+      div.innerHTML = article.story.description;
       const img = (div.querySelector('img'));
       let source ="http://www.zdnet.com/i/story/61/44/001492/pirateship.png";
       if (img) {
         source = img.src;
       }
-
+      let snippet = (div.innerText);
+      snippet = ArticleAPIUtil.parseSnippet(snippet).slice(0, 150) + "...";
+      let creator = article.story.author;
+      if (article.story.creator) {
+        creator = article.story.creator.content;
+        if (typeof creator !== "string") {
+          creator = article.story.creator;
+        }
+      }
       return (
         <li key={article.story.title}
           className="today-view-content"
@@ -33,10 +43,10 @@ class TodayView extends React.Component {
         >
           <img src={source} className="today-view-image"/>
           <h1 className="today-view-title">{article.story.title}</h1>
-          <h2 className="today-view-author">{article.story.author}</h2>
+          <h2 className="today-view-author">{creator}</h2>
           <h3 className="today-view-feed-title">{article.feedTitle}</h3>
           <br/>
-          <p className="today-view-snippet">{article.story.contentSnippet}</p>
+          <p className="today-view-snippet">{snippet}</p>
         </li>
       );}
     );

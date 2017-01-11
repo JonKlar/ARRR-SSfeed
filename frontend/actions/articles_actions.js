@@ -25,7 +25,7 @@ export function getArticles(feed) {
       (xml) => {
           const data = {
             feedTitle: feed.title,
-            articles: xml.responseData.feed.entries
+            articles: xml.query.results.item
           };
         dispatch(receiveArticles(data));
       }

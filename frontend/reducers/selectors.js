@@ -6,7 +6,7 @@ export function allArticles(state) {
     });
   });
   content.sort( (a, b) => {
-    return (new Date(b.story.publishedDate) - new Date(a.story.publishedDate));
+    return (new Date(b.story.pubDate) - new Date(a.story.pubDate));
   });
   return content;
 }
@@ -35,7 +35,7 @@ export function articlesInCollection(state) {
     }
   });
   articles.sort( (a, b) => {
-    return (new Date(b.publishedDate) - new Date(a.publishedDate));
+    return (new Date(b.pubDate) - new Date(a.pubDate));
   });
   return articles;
 }
@@ -53,13 +53,13 @@ export function articlesFromToday(state) {
   let articles = [];
   Object.keys(state.articles).forEach( (feedTitle) => {
     state.articles[feedTitle].forEach( (article) => {
-      if ((new Date - new Date(article.publishedDate)) < 86400000) {
+      if ((new Date - new Date(article.pubDate)) < 86400000) {
         articles.push({story: article, feedTitle});
       }
     });
   });
   articles.sort( (a, b) => {
-    return (new Date(b.story.publishedDate) - new Date(a.story.publishedDate));
+    return (new Date(b.story.pubDate) - new Date(a.story.pubDate));
   });
   return articles;
 }

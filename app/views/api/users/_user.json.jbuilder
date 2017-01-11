@@ -7,4 +7,13 @@ json.collections do
     json.feeds collection.feeds
   end
 end
-json.savedArticles user.articles
+json.savedArticles do
+  json.array! user.articles do |article|
+    json.id article.id
+    json.title article.title
+    json.description article.content
+    json.link article.link
+    json.author article.author
+    json.pubDate article.publishedDate
+  end
+end

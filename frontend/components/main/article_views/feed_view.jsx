@@ -19,14 +19,14 @@ class FeedView extends React.Component {
         <h1 className="feed-view-title"
             onClick={() => this.handlePassThrough(article.link)}
         >{article.title}</h1>
-        <h2 className="feed-view-author">{article.author}</h2>
+      <h2 className="feed-view-author">{article.creator}</h2>
         <h3 className="feed-view-date">
-          {DateHelper.time_ago_in_words_with_parsing(article.publishedDate)}
+          {DateHelper.time_ago_in_words_with_parsing(article.pubDate)}
         </h3>
         <h4 className="feed-view-save"><ArticleSaveButton article={article}/></h4>
         <br/>
         <article className="feed-view-content"
-          dangerouslySetInnerHTML={{__html: article.content }}
+          dangerouslySetInnerHTML={{__html: article.description }}
         />
       </li>
     ));

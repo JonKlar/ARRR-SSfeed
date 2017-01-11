@@ -1,16 +1,15 @@
 const ArticleAPIUtil = {
 
-  createArticle(article) {
+  createArticle(article, creator) {
     return ($.ajax({
       method: "POST",
       url: `api/articles`,
       data: { article: {
         title: article.title,
         link: article.link,
-        content: article.content,
-        content_snippet: article.contentSnippet,
-        author: article.author,
-        publishedDate: article.publishedDate,
+        content: article.description,
+        author: creator,
+        publishedDate: article.pubDate,
         categories: article.categories,
       } },
     }));
@@ -24,7 +23,20 @@ const ArticleAPIUtil = {
         link: article.link
       }}
     }));
-  }
-};
+  },
 
+  parseSnippet(snippet) {
+    let holder = "";
+    for (let i = 0 ; i < snippet.length ; i++ ) {
+      if (holder[i] !== " ") {
+        holder += snippet[i];
+        if (holder.length > 300) {
+          return holder + "...";
+        }
+      }
+    }
+    return holder;
+  }
+
+};
 export default ArticleAPIUtil;

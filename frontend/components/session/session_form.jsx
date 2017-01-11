@@ -82,7 +82,8 @@ class SessionForm extends React.Component {
     }
 
     return (
-      <div className="session-form-wrapper" onClick={ this.closeForm }>
+      <div className="session-form-wrapper">
+        <div className="session-form-deadspace" onClick={ this.closeForm }/>
         <div className="session-form">
           <h1>{banner}</h1>
           <form >

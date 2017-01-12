@@ -171,3 +171,7 @@
 .saved:hover {
   cursor: pointer;
 }
+
+.iframe {
+  height: 30vw;
+}

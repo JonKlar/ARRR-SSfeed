@@ -13,9 +13,9 @@ class AllArticles extends React.Component {
   render(){
      let content = this.props.articles.map( (article) => {
        return (
-          <div className="story" key={article.story.title}>
+          <div className="story" key={article.story.title} onClick={() => this.handleSelectArticle(article.story)}>
             <div className="story-source">{article.feed}</div>
-            <article className="story-title" onClick={() => this.handleSelectArticle(article.story)}>{article.story.title}</article>
+            <article className="story-title">{article.story.title}</article>
             <div className="story-date">{DateHelper.time_ago_in_words_with_parsing(article.story.pubDate)}</div>
           </div>
           );

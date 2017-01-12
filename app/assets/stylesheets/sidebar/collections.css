@@ -25,13 +25,6 @@
   background: rgba( 255, 255, 255, 0.3 );
 }
 
-.feeds {
-  display: none;
-}
-
-.open .feeds {
-  display: block;
-}
 
 .pinned .chevron, .unpinned:hover .chevron {
   position: absolute;
@@ -74,4 +67,14 @@
 .feed:hover {
   cursor: pointer;
   background: rgba( 255, 255, 255, 0.3 );
+}
+
+
+.feeds, sidebar.unpinned:hover .feeds {
+  display: none;
+}
+
+
+.open .feeds, sidebar.unpinned:hover .open .feeds {
+  display: block;
 }
